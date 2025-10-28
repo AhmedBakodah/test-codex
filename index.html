@@ -23,6 +23,15 @@
   <body>
     <header class="app-header shadow-sm">
       <div class="container-xl d-flex align-items-center gap-4">
+        <button
+          class="btn menu-toggle d-lg-none"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+          aria-label="فتح القائمة"
+        >
+          <i class="bi bi-list"></i>
+        </button>
         <div class="brand d-flex align-items-center gap-2">
           <span class="brand-logo rounded-circle">zd</span>
           <div class="brand-text">
@@ -30,7 +39,11 @@
             <span class="d-block text-muted">منصة تعليمية</span>
           </div>
         </div>
-        <nav class="navbar flex-grow-1">
+        <nav id="primaryNav" class="navbar flex-grow-1">
+          <div class="mobile-nav-header d-lg-none">
+            <span class="fw-bold">القائمة</span>
+            <button class="btn-close menu-close" type="button" aria-label="إغلاق القائمة"></button>
+          </div>
           <ul class="nav gap-2 align-items-center">
             <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
             <li class="nav-item"><a class="nav-link" href="#">البرامج التعليمية</a></li>
@@ -38,8 +51,15 @@
             <li class="nav-item"><a class="nav-link" href="#">التقييمات</a></li>
             <li class="nav-item"><a class="nav-link" href="#">المجتمع</a></li>
           </ul>
+          <div class="mobile-actions d-lg-none">
+            <button class="btn btn-link text-decoration-none text-muted p-0" type="button">
+              <i class="bi bi-search fs-5 ms-2"></i>
+              بحث
+            </button>
+            <button class="btn btn-primary rounded-pill py-2 w-100" type="button">منطقة الدخول</button>
+          </div>
         </nav>
-        <div class="header-actions d-flex align-items-center gap-3 ms-auto">
+        <div class="header-actions d-none d-lg-flex align-items-center gap-3 ms-auto">
           <button class="btn btn-link text-decoration-none text-muted p-0">
             <i class="bi bi-search"></i>
           </button>
@@ -47,6 +67,7 @@
         </div>
       </div>
     </header>
+    <div class="menu-overlay d-lg-none"></div>
 
     <main class="py-5">
       <div class="container-xl">
